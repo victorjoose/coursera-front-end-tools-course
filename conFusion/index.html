@@ -122,11 +122,11 @@
                     </div>
                     <div class="form-row mb-4">
                         <label class="form-group col-sm-2" for="date">Date and Time</label>
-                        <div class="col-12 col-md-5">
+                        <div class="col-12 col-md-4">
                             <input class="form-control" id="date" name="date"
                                    placeholder="Date">
                         </div>
-                        <div class="col-12 col-md-5">
+                        <div class="col-12 col-md-4">
                             <input class="form-control" id="time" name="time"
                                    placeholder="Time">
                         </div>
@@ -211,6 +211,14 @@
                 <a href="#mycarousel" class="carousel-control-next" role="button" data-slide="next">
                     <span class="carousel-control-next-icon"></span>
                 </a>
+                <div class="btn-group " id="carouselButton">
+                    <button class="btn btn-danger btn-sm" id="carousel-pause">
+                        <span class="fa fa-pause"></span>
+                    </button>
+                    <button class="btn btn-danger btn-sm" id="carousel-play">
+                        <span class="fa fa-play"></span>
+                    </button>
+                </div>
             </div>
         </div>
     </div>
@@ -309,5 +317,18 @@
 <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
 <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
 <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $('#mycarousel').carousel({interval: 2000});
+
+        $('#carousel-pause').click(function() {
+            $('#mycarousel').carousel('pause')
+        });
+
+        $('#carousel-play').click(function() {
+            $('#mycarousel').carousel('cycle')
+        });
+    });
+</script>
 </body>
 </html>
